@@ -3,7 +3,8 @@ const playBtn = document.getElementById("play");
 let numCaselle = 0;
 let mycont = returnElement("top");
 let size = "";
-let punteggio = 0;
+let punteggio = [];
+let punt = 0;
 let gameend = false;
 let bombe = [];
 
@@ -16,7 +17,7 @@ playBtn.addEventListener ("click" , function() {
   let gameend = false;
   mycont.innerHTML = "";
   let h1 = document.createElement("h1");
-  h1.append("SCORE: 00" + punteggio+"0")
+  h1.append("SCORE: 0" + punt);
   mycont.append(h1)
   let container = document.getElementById("ms_cont");
   let select = document.getElementById("select").value;
@@ -36,7 +37,8 @@ playBtn.addEventListener ("click" , function() {
 
   console.log(bombe);
   listaElementi = [];
-  punteggio = 0;
+  punteggio = [];
+  punt = 0;
 
   container.innerHTML = "";
 
@@ -56,31 +58,45 @@ playBtn.addEventListener ("click" , function() {
     function () { 
       mycont.innerHTML = "";
       let h1 = document.createElement("h1");
-      h1.append("SCORE: 00" + punteggio+"0")
+      h1.append("SCORE: 0" + punt); 
       mycont.append(h1)
      
 
     if (bombe.includes(index+1) && gameend==false) {
       gameend = true;
       iteam.classList.add("bomba");
-      if (gameend == true) {
-        for (let i = 0; i < listaElementi.length; i++) {
-          if (bombe.includes(i+1)) {
-            listaElementi[i].classList.add("bomba");
-
-          }else {
-            listaElementi[i].classList.add("clicked");
+      setTimeout(function(){
+        if (gameend == true) {
+          for (let i = 0; i < listaElementi.length; i++) {
+            if (bombe.includes(i+1)) {
+              listaElementi[i].classList.add("bomba");
+  
+            }else {
+              listaElementi[i].classList.add("clicked");
+            }
+            
           }
-          
-        }
-      }
+  
+        };
+    }, 1000);
+      
 ;
 
  
 
     }else if (!bombe.includes(index+1) && gameend==false) {
       iteam.classList.add("clicked");
-      punteggio++;
+      if (!punteggio.includes(listaElementi[index])) {
+        punteggio.push(listaElementi[index]);
+        punt++;
+        console.log(punt, punteggio);
+        mycont.innerHTML = "";
+        let h1 = document.createElement("h1");
+        h1.append("SCORE: 0" + punt)
+        mycont.append(h1)
+        
+      }
+ 
     }
 
     

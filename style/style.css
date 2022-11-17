@@ -77,11 +77,15 @@ img {
 }
 
 .clicked {
-    background-color: aqua  ;
+    background-image: url("../img/img2.jpeg");
+    background-size: cover;
+    background-position-y: center;
 }
 
 .bomba {
-    background-color: red;
+
+    background-image: url("../img/img1.jpg");
+    background-size: cover;
 }
 
 /* bs rules  */
