@@ -1,0 +1,90 @@
+/* regole generali  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+
+   max-width: 100%;;
+ 
+
+}
+
+
+
+/* utility */
+
+.hidden {
+    display: none;
+}
+
+.active {
+
+    display: block;
+
+}
+
+/* ms */
+
+#ms_cont {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ms_bigc {
+
+    height: 700px;
+    display: flex;
+    align-items: center;
+
+}
+
+.box {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.size1 {
+    width: calc(100% / 10);
+    height: 60px;
+}
+
+.size2 {
+    width: calc(100% / 9);
+    height: 70px;
+}
+
+.size3 {
+    width: calc(100% / 7);
+    height: 90px;
+}
+
+.clicked {
+    background-color: aqua  ;
+}
+
+.bomba {
+    background-color: red;
+}
+
+/* bs rules  */
+
+
+
